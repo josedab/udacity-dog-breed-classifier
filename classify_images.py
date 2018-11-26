@@ -67,8 +67,7 @@ def classify_images(images_dir, results_dic, model):
     """
     for key in results_dic:
         fileLabel = results_dic[key][0]
-        filePath = "{}/{}".format(images_dir, key)
-        classifier_result = classifier(filePath, model).strip()
+        classifier_result = classifier(images_dir + key, model).strip()
         image_classification = classifier_result.lower()
 
         matching = 0
